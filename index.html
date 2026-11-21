@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teen 6 · Class 14 · Reported Speech</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f0f4f8; --surface:#fff; --text:#0f172a; --muted:#64748b;
+  --red:#e63946; --orange:#f97316; --green:#16a34a; --blue:#2563eb;
+  --purple:#7c3aed; --teal:#0891b2; --ink:#1a1a2e;
+  --direct:#c2410c; --direct-l:#fff7ed; --direct-b:#fed7aa;
+  --reported:#1d4ed8; --reported-l:#eff6ff; --reported-b:#bfdbfe;
+  --spy-bg:#060d06; --spy-green:#00e676; --spy-gold:#ffd700;
+  --spy-red:#ff3b3b; --spy-dim:rgba(0,230,118,0.07);
+  --radius:14px; --shadow:0 4px 24px rgba(0,0,0,0.07);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
+
+/* ── HEADER ── */
+.page-header{background:var(--ink);color:white;padding:40px 48px 32px;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;background:rgba(0,230,118,0.06)}
+.page-header::after{content:'';position:absolute;left:40%;bottom:-80px;width:220px;height:220px;border-radius:50%;background:rgba(249,115,22,0.07)}
+.header-top{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.badge{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:20px}
+.br{background:var(--red);color:white}.bm{background:rgba(255,255,255,0.11);color:rgba(255,255,255,0.72)}
+.bb{background:rgba(37,99,235,0.3);color:#93c5fd}.bn{background:rgba(0,230,118,0.18);color:#86efac}
+.page-title{font-family:'Fraunces',serif;font-size:52px;font-weight:900;line-height:1.05;margin-bottom:6px}
+.page-title span{color:var(--spy-green)}
+.page-subtitle{color:rgba(255,255,255,0.45);font-size:14px;margin-bottom:28px}
+.meta-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:relative;z-index:1}
+.meta-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius);padding:16px 20px}
+.meta-card h4{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.meta-card li{font-size:13px;color:rgba(255,255,255,0.72);padding:2px 0 2px 16px;position:relative;line-height:1.5;list-style:none}
+.meta-card li::before{content:'→';position:absolute;left:0;color:var(--red);font-size:11px}
+
+/* ── LAYOUT ── */
+main{padding:40px 48px;max-width:1080px;margin:0 auto}
+.section{margin-bottom:52px}
+.section-label{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.tag{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 14px;border-radius:20px}
+.tag-warmup{background:#fef3c7;color:#92400e}
+.tag-speaking{background:#ede9fe;color:#4c1d95}
+.tag-grammar{background:#dbeafe;color:#1e3a8a}
+.tag-spy{background:#052e16;color:#4ade80;border:1px solid rgba(0,230,118,0.2)}
+.section-title{font-family:'Fraunces',serif;font-size:26px;font-weight:700}
+.section-time{margin-left:auto;font-size:12px;color:var(--muted);background:var(--surface);border:1px solid #ddd;padding:4px 12px;border-radius:20px}
+.card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 32px;margin-bottom:16px}
+
+/* ── COLLAPSIBLES ── */
+.sblock{border:2px solid var(--blue);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.ablock{border:2px solid var(--green);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.sblock-header{background:rgba(37,99,235,0.06);color:var(--blue)}
+.ablock-header{background:rgba(22,163,74,0.06);color:var(--green)}
+.sblock-header,.ablock-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;cursor:pointer;user-select:none;font-weight:600;font-size:14px}
+.sblock-header:hover{background:rgba(37,99,235,0.12)}.ablock-header:hover{background:rgba(22,163,74,0.12)}
+.sblock-body,.ablock-body{padding:16px 18px;background:var(--surface);display:none;font-size:14px;line-height:1.75}
+.sblock-body.open,.ablock-body.open{display:block}
+.toggle-icon{font-size:18px;transition:transform 0.2s}.open-icon{transform:rotate(45deg)}
+
+/* ── MISC ── */
+.tip-box{background:#fffbeb;border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:12px 16px;font-size:13px;margin:12px 0;line-height:1.65}
+.tip-box strong{color:#92400e}
+.info-box{background:#eff6ff;border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:12px 16px;font-size:13px;margin:10px 0;line-height:1.65}
+.divider{border:none;border-top:2px solid #e2e8f0;margin:20px 0}
+.reveal-btn{background:transparent;border:2px solid var(--blue);color:var(--blue);border-radius:8px;padding:8px 16px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;margin-top:10px;margin-left:8px;transition:all 0.2s}
+.reveal-btn:hover{background:var(--blue);color:white}
+.answer-reveal{background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:14px 18px;margin-top:10px;display:none;font-size:13.5px;line-height:1.9}
+.answer-reveal strong{color:var(--green)}
+.check-btn{background:var(--ink);color:white;border:none;border-radius:8px;padding:10px 22px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;margin-top:14px;transition:all 0.2s}
+.check-btn:hover{background:var(--red);transform:translateY(-1px)}
+.link-btn{display:inline-flex;align-items:center;gap:10px;color:white;text-decoration:none;border-radius:10px;padding:13px 24px;font-size:14px;font-weight:700;transition:all 0.2s;margin:4px 4px 4px 0;box-shadow:0 4px 0 rgba(0,0,0,0.25)}
+.link-btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 rgba(0,0,0,0.25)}
+.lb-red{background:var(--red);box-shadow:0 4px 0 #9e2030}
+.lb-blue{background:var(--blue);box-shadow:0 4px 0 #1e40af}
+.lb-green{background:var(--green);box-shadow:0 4px 0 #15803d}
+.lb-spy{background:#052e16;box-shadow:0 4px 0 rgba(0,230,118,0.2);border:1px solid rgba(0,230,118,0.3)}
+
+/* ══════════════════════════════════════
+   GRAMMAR: REPORTED SPEECH
+══════════════════════════════════════ */
+/* Transform visual */
+.speech-compare{display:grid;grid-template-columns:1fr 60px 1fr;gap:0;margin:18px 0;align-items:start}
+.speech-box{border-radius:12px;padding:18px 20px}
+.speech-direct{background:var(--direct-l);border:2px solid var(--direct-b)}
+.speech-reported{background:var(--reported-l);border:2px solid var(--reported-b)}
+.speech-arrow{display:flex;align-items:center;justify-content:center;height:100%;padding-top:20px}
+.speech-arrow-inner{font-size:28px;color:var(--purple)}
+.speech-label{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.sl-direct{color:var(--direct)} .sl-reported{color:var(--reported)}
+.speech-quote{font-size:15px;line-height:1.7;font-style:italic}
+.speech-direct .speech-quote{color:var(--direct)}
+.speech-reported .speech-quote{color:var(--reported)}
+.speech-note{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.5}
+.speech-change{background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.25);border-radius:4px;padding:1px 6px;color:var(--purple);font-weight:600}
+
+/* Say vs Tell */
+.say-tell-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.st-card{border-radius:12px;padding:20px;border:2px solid}
+.st-say{background:#fff7ed;border-color:#fed7aa}
+.st-tell{background:#eff6ff;border-color:#bfdbfe}
+.st-title{font-family:'Fraunces',serif;font-size:22px;font-weight:900;margin-bottom:6px}
+.st-say .st-title{color:var(--orange)} .st-tell .st-title{color:var(--blue)}
+.st-rule{font-size:13px;line-height:1.6;margin-bottom:12px;color:var(--muted)}
+.st-examples{display:flex;flex-direction:column;gap:6px}
+.ex-line{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;line-height:1.5}
+.ex-ok{color:var(--green);font-size:14px;flex-shrink:0}
+.ex-bad{color:var(--red);font-size:14px;flex-shrink:0}
+.ex-text strong{font-weight:700}
+
+/* Backshift table */
+.backshift-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:14px 0}
+.backshift-table th{padding:10px 14px;text-align:left;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:white}
+.backshift-table th:first-child{background:var(--direct);border-radius:10px 0 0 0}
+.backshift-table th:last-child{background:var(--reported);border-radius:0 10px 0 0}
+.backshift-table td{padding:11px 14px;border-bottom:1px solid #f1f5f9}
+.backshift-table tr:last-child td{border-bottom:none}
+.backshift-table tr:nth-child(even) td{background:#fafafa}
+.tense-chip{display:inline-block;border-radius:20px;padding:2px 10px;font-size:11px;font-weight:700}
+.tc-direct{background:var(--direct-l);color:var(--direct)} .tc-reported{background:var(--reported-l);color:var(--reported)}
+.tense-ex{font-size:12px;color:var(--muted);font-style:italic;margin-top:4px}
+
+/* Grammar exercises */
+.grammar-ex{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:14px}
+.gex-header{display:flex;align-items:center;gap:12px;padding:14px 22px;border-bottom:1px solid #f1f5f9;background:#f8f9fa}
+.gex-num{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0;color:white}
+.gex-body{padding:18px 22px}
+
+/* Say/Tell button exercise */
+.st-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #f5f5f5;font-size:14px;line-height:1.7}
+.st-item:last-child{border-bottom:none}
+.st-item-num{min-width:24px;height:24px;background:var(--blue);color:white;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:3px}
+.st-btns{display:flex;gap:6px;flex-shrink:0;margin-top:2px}
+.stb{border-radius:8px;border:2px solid #e2e8f0;padding:5px 14px;font-size:12px;font-weight:700;cursor:pointer;transition:all 0.15s;background:white;user-select:none}
+.stb-say:hover,.stb-say.selected{border-color:var(--orange);background:#fff7ed;color:var(--orange)}
+.stb-tell:hover,.stb-tell.selected{border-color:var(--blue);background:#eff6ff;color:var(--blue)}
+.stb.correct{box-shadow:0 0 0 3px rgba(22,163,74,0.3)}
+.stb.wrong{opacity:0.4}
+
+/* Fill in blank exercise */
+.blank-input{border:none;border-bottom:2px solid var(--blue);outline:none;padding:2px 8px;font-family:'DM Sans',sans-serif;font-size:14px;background:transparent;min-width:120px;color:var(--text);transition:border-color 0.2s}
+.blank-input:focus{border-bottom-color:var(--red)}
+.blank-input.correct{border-bottom-color:var(--green);color:var(--green);font-weight:600}
+.blank-input.incorrect{border-bottom-color:var(--red);color:var(--red)}
+
+/* ══════════════════════════════════════
+   SPY ACADEMY
+══════════════════════════════════════ */
+.spy-shell{background:var(--spy-bg);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);position:relative}
+.spy-shell::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(0,230,118,0.05),transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(255,61,61,0.04),transparent 60%);pointer-events:none;z-index:0}
+.spy-topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:rgba(0,230,118,0.04);border-bottom:1px solid rgba(0,230,118,0.1);position:relative;z-index:1}
+.spy-logo{display:flex;align-items:center;gap:10px}
+.spy-logo-icon{font-size:20px}
+.spy-logo-text{font-family:'DM Mono',monospace;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--spy-green)}
+.spy-status{font-family:'DM Mono',monospace;font-size:11px;color:rgba(0,230,118,0.45);display:flex;align-items:center;gap:12px}
+.spy-dot{width:8px;height:8px;border-radius:50%;background:var(--spy-green);animation:spyblink 1.5s infinite}
+@keyframes spyblink{0%,100%{opacity:1}50%{opacity:.2}}
+.spy-rank{font-size:11px;font-weight:700;color:var(--spy-gold)}
+
+/* Spy screens */
+.spy-screen{display:none;padding:32px 28px;position:relative;z-index:1}
+.spy-screen.active{display:block}
+
+/* Hub screen */
+.spy-hub-title{font-family:'Fraunces',serif;font-size:42px;font-weight:900;color:white;margin-bottom:4px;line-height:1.1}
+.spy-hub-sub{font-family:'DM Mono',monospace;font-size:12px;color:var(--spy-green);letter-spacing:2px;margin-bottom:28px}
+.spy-mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.spy-mission-card{background:rgba(0,230,118,0.04);border:1px solid rgba(0,230,118,0.12);border-radius:14px;padding:20px;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden}
+.spy-mission-card:hover{border-color:rgba(0,230,118,0.35);background:rgba(0,230,118,0.08);transform:translateY(-2px)}
+.spy-mission-card.locked{opacity:0.5;cursor:not-allowed}
+.spy-mission-card.locked:hover{transform:none;border-color:rgba(0,230,118,0.12)}
+.spy-mission-card.completed{border-color:rgba(0,230,118,0.4);background:rgba(0,230,118,0.06)}
+.smc-num{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:rgba(0,230,118,0.5);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.smc-dot{width:6px;height:6px;border-radius:50%;background:var(--spy-green)}
+.smc-title{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:white;margin-bottom:4px}
+.smc-sub{font-size:12.5px;color:rgba(255,255,255,0.45);line-height:1.5;margin-bottom:12px}
+.smc-btn{display:inline-block;background:var(--spy-green);color:var(--spy-bg);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border-radius:6px;cursor:pointer;transition:all 0.15s;font-family:'DM Mono',monospace}
+.spy-mission-card:hover .smc-btn{background:#00ff9a}
+.locked .smc-btn{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.3);cursor:not-allowed}
+.smc-complete{position:absolute;top:12px;right:14px;font-size:18px}
+.spy-score-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.spy-score-cell{background:rgba(0,230,118,0.04);border:1px solid rgba(0,230,118,0.1);border-radius:10px;padding:10px 12px;text-align:center}
+.ssc-val{font-family:'Fraunces',serif;font-size:24px;font-weight:900;color:var(--spy-green);line-height:1}
+.ssc-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(0,230,118,0.45);margin-top:3px}
+
+/* Briefing Room */
+.briefing-box{background:rgba(0,230,118,0.05);border:1px solid rgba(0,230,118,0.15);border-radius:12px;padding:18px 20px;margin-bottom:14px}
+.briefing-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--spy-green);margin-bottom:10px}
+.briefing-title{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:white;margin-bottom:8px}
+.briefing-text{font-size:13.5px;color:rgba(255,255,255,0.7);line-height:1.75}
+.briefing-text strong{color:var(--spy-green)}
+.spy-transform{display:flex;align-items:center;gap:10px;margin:8px 0;flex-wrap:wrap}
+.spy-direct{background:rgba(255,61,61,0.12);border:1px solid rgba(255,61,61,0.3);border-radius:6px;padding:6px 12px;font-size:13px;color:#fca5a5;font-style:italic}
+.spy-arr{color:var(--spy-green);font-weight:700;font-size:16px}
+.spy-reported{background:rgba(0,230,118,0.1);border:1px solid rgba(0,230,118,0.25);border-radius:6px;padding:6px 12px;font-size:13px;color:#86efac}
+.spy-backshift{display:grid;grid-template-columns:1fr 20px 1fr;gap:4px;margin:10px 0;align-items:center}
+.sbs-from{font-family:'DM Mono',monospace;font-size:11px;background:rgba(255,61,61,0.1);border:1px solid rgba(255,61,61,0.2);border-radius:4px;padding:5px 10px;color:#fca5a5;text-align:center}
+.sbs-arr{text-align:center;color:rgba(0,230,118,0.5);font-size:12px}
+.sbs-to{font-family:'DM Mono',monospace;font-size:11px;background:rgba(0,230,118,0.08);border:1px solid rgba(0,230,118,0.18);border-radius:4px;padding:5px 10px;color:#86efac;text-align:center}
+
+/* Mission 1: Interceptor */
+.interceptor-display{text-align:center;margin-bottom:20px}
+.int-file-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:rgba(0,230,118,0.5);margin-bottom:8px}
+.int-quote{background:rgba(255,61,61,0.08);border:1px solid rgba(255,61,61,0.2);border-radius:10px;padding:18px 20px;font-size:20px;font-style:italic;color:#fca5a5;line-height:1.4;margin-bottom:6px;font-family:'Fraunces',serif}
+.int-speaker{font-size:11px;color:rgba(255,255,255,0.35);font-family:'DM Mono',monospace}
+.int-task{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:16px}
+.int-input-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+.int-prefix{font-size:14px;color:rgba(255,255,255,0.75);font-weight:600}
+.int-input{background:rgba(0,230,118,0.06);border:2px solid rgba(0,230,118,0.25);border-radius:8px;padding:10px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--spy-green);outline:none;min-width:200px;transition:border-color 0.2s}
+.int-input:focus{border-color:rgba(0,230,118,0.6)}
+.int-input.int-correct{border-color:var(--spy-green);background:rgba(0,230,118,0.12);color:#86efac}
+.int-input.int-wrong{border-color:var(--spy-red);background:rgba(255,61,61,0.08);color:#fca5a5}
+.int-progress{background:rgba(0,230,118,0.08);border-radius:4px;height:4px;margin-bottom:18px}
+.int-progress-bar{height:4px;border-radius:4px;background:linear-gradient(90deg,var(--spy-green),#00e5ff);transition:width 0.4s}
+.spy-feedback{font-size:13px;padding:10px 14px;border-radius:8px;margin-top:10px;display:none;font-family:'DM Mono',monospace}
+.spy-feedback.show{display:block}
+.sf-ok{background:rgba(0,230,118,0.1);border:1px solid rgba(0,230,118,0.2);color:var(--spy-green)}
+.sf-bad{background:rgba(255,61,61,0.1);border:1px solid rgba(255,61,61,0.2);color:#fca5a5}
+.int-score{text-align:center;margin-bottom:10px;font-family:'DM Mono',monospace;font-size:12px;color:rgba(0,230,118,0.6)}
+
+/* Mission 2: Intel Analysis */
+.intel-file{background:rgba(0,0,0,0.4);border:1px solid rgba(0,230,118,0.12);border-radius:12px;margin-bottom:14px;overflow:hidden}
+.intel-header{background:rgba(0,230,118,0.06);border-bottom:1px solid rgba(0,230,118,0.1);padding:12px 18px;display:flex;align-items:center;gap:12px}
+.intel-file-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--spy-green);background:rgba(0,230,118,0.1);padding:3px 8px;border-radius:4px}
+.intel-title{font-size:13px;font-weight:700;color:rgba(255,255,255,0.85)}
+.intel-stamp{margin-left:auto;font-family:'DM Mono',monospace;font-size:9px;color:var(--spy-red);letter-spacing:2px}
+.intel-body{padding:16px 18px}
+.intel-transcript{font-family:'DM Mono',monospace;font-size:12px;color:rgba(0,230,118,0.7);line-height:1.9;margin-bottom:14px;background:rgba(0,0,0,0.3);border-radius:8px;padding:14px 16px;border-left:3px solid rgba(0,230,118,0.2)}
+.intel-transcript .it-speaker{color:rgba(0,230,118,0.45)}
+.intel-report-area{background:rgba(0,0,0,0.3);border:2px solid rgba(0,230,118,0.15);border-radius:8px;padding:14px 16px}
+.ira-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(0,230,118,0.4);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.ira-textarea{width:100%;background:transparent;border:none;outline:none;font-family:'DM Sans',sans-serif;font-size:13.5px;color:rgba(255,255,255,0.85);resize:vertical;min-height:80px;line-height:1.7}
+.ira-textarea::placeholder{color:rgba(255,255,255,0.2);font-style:italic}
+.ira-hint{font-size:11px;color:rgba(0,230,118,0.35);margin-top:6px;font-style:italic}
+
+/* Mission 3: Interrogation */
+.interrogation-box{background:rgba(0,0,0,0.5);border:1px solid rgba(255,61,61,0.2);border-radius:12px;padding:20px;margin-bottom:14px}
+.int-room-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--spy-red);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.dialogue-line{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.dl-speaker{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;min-width:80px;padding-top:3px;font-family:'DM Mono',monospace}
+.dl-agent{color:rgba(0,230,118,0.7)} .dl-suspect{color:#fca5a5}
+.dl-text{font-size:13.5px;color:rgba(255,255,255,0.8);line-height:1.6;font-style:italic}
+.int3-task{background:rgba(0,230,118,0.05);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+.int3-task h4{font-family:'Fraunces',serif;font-size:16px;color:white;margin-bottom:6px}
+.int3-task p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6}
+.int3-item{background:rgba(0,0,0,0.3);border:1px solid rgba(0,230,118,0.1);border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.int3-quote{font-size:13px;color:rgba(255,255,255,0.55);font-style:italic;margin-bottom:8px;padding-left:10px;border-left:2px solid rgba(0,230,118,0.2)}
+.int3-input{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(0,230,118,0.2);outline:none;font-family:'DM Sans',sans-serif;font-size:13.5px;color:var(--spy-green);padding:6px 0;transition:border-color 0.2s}
+.int3-input:focus{border-bottom-color:rgba(0,230,118,0.6)}
+.int3-input.correct{color:#86efac;border-bottom-color:var(--spy-green)}
+.int3-input.wrong{color:#fca5a5;border-bottom-color:var(--spy-red)}
+
+/* Spy buttons */
+.spybtn{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:8px;padding:12px 24px;cursor:pointer;transition:all 0.15s}
+.spybtn-green{background:var(--spy-green);color:var(--spy-bg);box-shadow:0 4px 0 rgba(0,230,118,0.3)}
+.spybtn-green:hover{transform:translateY(-2px);box-shadow:0 6px 0 rgba(0,230,118,0.3)}
+.spybtn-ghost{background:rgba(0,230,118,0.08);color:var(--spy-green);border:1px solid rgba(0,230,118,0.2)}
+.spybtn-ghost:hover{background:rgba(0,230,118,0.15)}
+.spybtn-red{background:rgba(255,61,61,0.15);color:#fca5a5;border:1px solid rgba(255,61,61,0.25)}
+.spybtn-red:hover{background:rgba(255,61,61,0.25)}
+
+/* Graduated final */
+.spy-graduation{text-align:center;background:linear-gradient(135deg,rgba(0,230,118,0.08),rgba(255,215,0,0.05));border:1px solid rgba(255,215,0,0.2);border-radius:14px;padding:28px 24px;margin-top:16px;display:none}
+.spy-graduation.show{display:block}
+.sg-icon{font-size:64px;margin-bottom:12px}
+.sg-title{font-family:'Fraunces',serif;font-size:28px;color:var(--spy-gold);margin-bottom:6px}
+.sg-rank{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:2px;color:rgba(255,215,0,0.65);margin-bottom:12px}
+.sg-score{font-family:'Fraunces',serif;font-size:48px;font-weight:900;color:white;line-height:1;margin-bottom:4px}
+.sg-score-label{font-size:12px;color:rgba(255,255,255,0.4)}
+
+@keyframes popIn{0%{transform:scale(.93)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+@keyframes shakeX{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+
+@media(max-width:768px){
+  main{padding:24px 18px}.page-header{padding:28px 20px}.page-title{font-size:34px}
+  .meta-row,.say-tell-grid,.speech-compare,.spy-mission-grid,.spy-score-bar{grid-template-columns:1fr}
+  .speech-arrow{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="page-header">
+  <div class="header-top">
+    <span class="badge br">Class 14</span>
+    <span class="badge bm">Teen 6 · B1</span>
+    <span class="badge bb">Unit 8</span>
+    <span class="badge bn">🕵️ Agent Training</span>
+  </div>
+  <h1 class="page-title">Reported<br><span>Speech</span></h1>
+  <p class="page-subtitle">Digital literacy · LanguaTalk · Say &amp; Tell · Tense backshift · Spy Academy</p>
+  <div class="meta-row">
+    <div class="meta-card">
+      <h4>📋 Agenda</h4>
+      <ul>
+        <li>Warm-up: Digital Literacy game</li>
+        <li>Speaking: LanguaTalk practice</li>
+        <li>Grammar: Reported speech — say/tell + backshift</li>
+        <li>Spy Academy: Comms — 4 missions</li>
+      </ul>
+    </div>
+    <div class="meta-card">
+      <h4>🎯 Objectives</h4>
+      <ul>
+        <li>Review digital literacy concepts through a game</li>
+        <li>Distinguish say and tell + use them correctly</li>
+        <li>Apply tense backshift in reported speech</li>
+        <li>Report dialogue in different written formats</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════════ WARM-UP ═══════════════════ -->
+<section class="section">
+  <div class="section-label">
+    <span class="tag tag-warmup">🧠 Warm-Up</span>
+    <span class="section-title">Digital Literacy Game</span>
+    <span class="section-time">~10 min</span>
+  </div>
+  <div class="card">
+    <p style="font-size:14px; color:var(--muted); margin-bottom:18px; line-height:1.6;">Start here! Play the Colombo Americano Digital Literacy game to warm up your brain. Work through as many levels as you can — you'll need these skills later in the spy missions.</p>
+    <div style="background:var(--ink); border-radius:14px; padding:22px 26px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+      <div style="font-size:40px; flex-shrink:0;">🧩</div>
+      <div style="flex:1;">
+        <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--spy-green); margin-bottom:6px;">Colombo Americano · Teen 6</div>
+        <div style="font-family:'Fraunces',serif; font-size:20px; color:white; margin-bottom:6px;">Digital Literacy Challenge</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.5); margin-bottom:14px;">Test your knowledge of media, online safety, and digital skills.</div>
+        <a class="link-btn lb-spy" href="https://sites.google.com/t.colomboamericano.edu.co/digital-literacy-teen-6/game-digital-literacy" target="_blank">🎮 Open Digital Literacy Game</a>
+      </div>
+    </div>
+    <div class="tip-box" style="margin-top:14px;"><strong>After the game:</strong> Compare your score with a partner. Which topic area was hardest? Why?</div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SPEAKING ═══════════════════ -->
+<section class="section">
+  <div class="section-label">
+    <span class="tag tag-speaking">🎤 Speaking</span>
+    <span class="section-title">LanguaTalk Practice</span>
+    <span class="section-time">~12 min</span>
+  </div>
+  <div class="card">
+    <p style="font-size:14px; color:var(--muted); margin-bottom:16px; line-height:1.6;">Open LanguaTalk and practice using reported speech to talk about news and things you've heard. Use the two prompts below — pick the one that interests you most and aim for 3+ minutes of conversation.</p>
+    <div style="background:linear-gradient(135deg,#1e1b4b,#0f172a); border-radius:14px; padding:20px 24px; margin-bottom:14px;">
+      <div style="font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#a5b4fc; margin-bottom:10px;">Today's Speaking Prompts</div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div style="background:rgba(255,255,255,0.06); border-radius:10px; padding:14px 16px;">
+          <div style="font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#818cf8; margin-bottom:6px;">Prompt A — Reported News</div>
+          <div style="font-size:13.5px; color:rgba(255,255,255,0.85); line-height:1.6;">Tell me about a news story you heard about recently. Report what a journalist, friend, or family member said about it. Use "He said…", "She told me…", "They reported that…". Ask me questions to help me give more details and practise backshift naturally.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.06); border-radius:10px; padding:14px 16px;">
+          <div style="font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#f97316; margin-bottom:6px;">Prompt B — Gossip Machine</div>
+          <div style="font-size:13.5px; color:rgba(255,255,255,0.85); line-height:1.6;">Let's practice reported speech as gossip. Tell me something funny, strange, or surprising that someone said to you this week (it can be invented). I'll report what you said back to you, and we'll see if the tenses backshift correctly. Keep it appropriate!</div>
+        </div>
+      </div>
+    </div>
+    <a class="link-btn lb-blue" href="https://languatalk.com/users/sign_in" target="_blank">🎙️ Open LanguaTalk</a>
+  </div>
+</section>
+
+<!-- ═══════════════════ GRAMMAR ═══════════════════ -->
+<section class="section">
+  <div class="section-label">
+    <span class="tag tag-grammar">📡 Grammar</span>
+    <span class="section-title">Reported Speech</span>
+    <span class="section-time">~20 min</span>
+  </div>
+
+  <!-- WHAT IS IT? -->
+  <div class="card">
+    <h3 style="font-family:'Fraunces',serif; font-size:20px; margin-bottom:12px;">🗣️ What is reported speech?</h3>
+    <p style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:18px;">When you repeat what someone else said, you're using <strong>reported speech</strong>. You're not quoting word-for-word — you're <em>reporting</em> the message. This means you need to change the tenses, pronouns, and sometimes time expressions.</p>
+
+    <div class="speech-compare">
+      <div class="speech-box speech-direct">
+        <div class="speech-label sl-direct">🎙️ Direct Speech — exact words</div>
+        <div class="speech-quote">"I <strong>am</strong> really tired today."</div>
+        <div class="speech-note">The exact words, in quotation marks. The verb is in the PRESENT.</div>
+      </div>
+      <div class="speech-arrow"><div class="speech-arrow-inner">→</div></div>
+      <div class="speech-box speech-reported">
+        <div class="speech-label sl-reported">📋 Reported Speech — your summary</div>
+        <div class="speech-quote">She said (that) she <span class="speech-change">was</span> really tired <span class="speech-change">that day</span>.</div>
+        <div class="speech-note">The verb moved to the PAST. The time word changed too.</div>
+      </div>
+    </div>
+
+    <div class="tip-box"><strong>The "that" rule:</strong> You can include or leave out "that" after say/tell — both are correct! "She said (that) she was tired." ✅</div>
+  </div>
+
+  <!-- SAY vs TELL -->
+  <div class="card">
+    <h3 style="font-family:'Fraunces',serif; font-size:20px; margin-bottom:14px;">🆚 <span style="color:var(--orange);">SAY</span> vs <span style="color:var(--blue);">TELL</span> — the most common mistake</h3>
+    <div class="say-tell-grid">
+      <div class="st-card st-say">
+        <div class="st-title">SAY 🗣️</div>
+        <div class="st-rule">After <strong>say</strong> you do NOT need to mention who you said it to. If you include a person, use <em>to</em>.</div>
+        <div class="st-examples">
+          <div class="ex-line"><span class="ex-ok">✅</span><div class="ex-text">She <strong>said</strong> she was hungry.</div></div>
+          <div class="ex-line"><span class="ex-ok">✅</span><div class="ex-text">He <strong>said to me</strong> that he was leaving.</div></div>
+          <div class="ex-line"><span class="ex-bad">❌</span><div class="ex-text">She <strong>said me</strong> she was hungry.</div></div>
+          <div style="background:#fff7ed; border-radius:8px; padding:10px; margin-top:6px; font-size:12.5px; color:var(--orange);">🧠 <strong>Pattern:</strong> say + (that) + clause</div>
+        </div>
+      </div>
+      <div class="st-card st-tell">
+        <div class="st-title">TELL 👤</div>
+        <div class="st-rule">After <strong>tell</strong> you ALWAYS need to say who you told. No exceptions!</div>
+        <div class="st-examples">
+          <div class="ex-line"><span class="ex-ok">✅</span><div class="ex-text">She <strong>told me</strong> she was hungry.</div></div>
+          <div class="ex-line"><span class="ex-ok">✅</span><div class="ex-text">He <strong>told the class</strong> he was leaving.</div></div>
+          <div class="ex-line"><span class="ex-bad">❌</span><div class="ex-text">She <strong>told</strong> she was hungry.</div></div>
+          <div style="background:#eff6ff; border-radius:8px; padding:10px; margin-top:6px; font-size:12.5px; color:var(--blue);">🧠 <strong>Pattern:</strong> tell + person + (that) + clause</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-box"><strong>Special tell phrases:</strong> tell the truth · tell a lie · tell a story · tell time · tell the difference — these don't use reported speech rules!</div>
+  </div>
+
+  <!-- TENSE BACKSHIFT -->
+  <div class="card">
+    <h3 style="font-family:'Fraunces',serif; font-size:20px; margin-bottom:6px;">⏪ Tense Backshift — the time machine rule</h3>
+    <p style="font-size:13.5px; color:var(--muted); margin-bottom:16px; line-height:1.6;">When you report speech, the verbs "go back" one step in time. Think of it like pressing rewind on the tense. ⏪</p>
+
+    <table class="backshift-table">
+      <thead>
+        <tr>
+          <th>🎙️ Direct Speech (original tense)</th>
+          <th>📋 Reported Speech (backshifted)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="tense-chip tc-direct">present simple</span><div class="tense-ex">"I <strong>live</strong> in Cali."</div></td>
+          <td><span class="tense-chip tc-reported">past simple</span><div class="tense-ex">She said she <strong>lived</strong> in Cali.</div></td>
+        </tr>
+        <tr>
+          <td><span class="tense-chip tc-direct">present continuous</span><div class="tense-ex">"We <strong>are watching</strong> TV."</div></td>
+          <td><span class="tense-chip tc-reported">past continuous</span><div class="tense-ex">They said they <strong>were watching</strong> TV.</div></td>
+        </tr>
+        <tr>
+          <td><span class="tense-chip tc-direct">present perfect</span><div class="tense-ex">"I <strong>have seen</strong> that film."</div></td>
+          <td><span class="tense-chip tc-reported">past perfect</span><div class="tense-ex">He said he <strong>had seen</strong> that film.</div></td>
+        </tr>
+        <tr>
+          <td><span class="tense-chip tc-direct">past simple</span><div class="tense-ex">"I <strong>called</strong> you."</div></td>
+          <td><span class="tense-chip tc-reported">past perfect</span><div class="tense-ex">She said she <strong>had called</strong> me.</div></td>
+        </tr>
+        <tr>
+          <td><span class="tense-chip tc-direct">will</span><div class="tense-ex">"I <strong>will help</strong> you."</div></td>
+          <td><span class="tense-chip tc-reported">would</span><div class="tense-ex">He said he <strong>would help</strong> me.</div></td>
+        </tr>
+        <tr>
+          <td><span class="tense-chip tc-direct">can</span><div class="tense-ex">"She <strong>can</strong> speak French."</div></td>
+          <td><span class="tense-chip tc-reported">could</span><div class="tense-ex">He said she <strong>could</strong> speak French.</div></td>
+        </tr>
+        <tr>
+          <td><span class="tense-chip tc-direct">must / have to</span><div class="tense-ex">"I <strong>must</strong> leave now."</div></td>
+          <td><span class="tense-chip tc-reported">had to</span><div class="tense-ex">She said she <strong>had to</strong> leave.</div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sblock" style="margin-top:10px;">
+      <div class="sblock-header" onclick="toggleBlock(this)">
+        <span>🔄 Also change: Pronouns + Time expressions</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="sblock-body">
+        <div class="two-col" style="gap:20px;">
+          <div>
+            <strong style="color:var(--blue);">Pronouns change</strong>
+            <div style="margin-top:8px; font-size:13.5px; line-height:2.2;">
+              <span class="speech-change">I</span> → he/she &nbsp;|&nbsp; <span class="speech-change">we</span> → they<br>
+              <span class="speech-change">my</span> → his/her &nbsp;|&nbsp; <span class="speech-change">you</span> → I/they<br>
+              <em>"I lost <span class="speech-change">my</span> phone." → She said she had lost <span class="speech-change">her</span> phone.</em>
+            </div>
+          </div>
+          <div>
+            <strong style="color:var(--orange);">Time expressions change</strong>
+            <div style="margin-top:8px; font-size:13.5px; line-height:2.2;">
+              <span class="speech-change">now</span> → then &nbsp;|&nbsp; <span class="speech-change">today</span> → that day<br>
+              <span class="speech-change">tomorrow</span> → the next day<br>
+              <span class="speech-change">yesterday</span> → the day before<br>
+              <span class="speech-change">here</span> → there &nbsp;|&nbsp; <span class="speech-change">this</span> → that
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXERCISE 1: SAY OR TELL -->
+  <div class="grammar-ex">
+    <div class="gex-header">
+      <div class="gex-num" style="background:var(--orange);">1</div>
+      <div>
+        <div style="font-weight:700; font-size:15px;">SAY or TELL? — Click the right one</div>
+        <div style="font-size:12px; color:var(--muted); margin-top:2px;">Think: does the sentence have a person after the verb? That's your clue.</div>
+      </div>
+      <div style="margin-left:auto; font-size:13px; color:var(--muted);">Score: <span id="ex1-score" style="color:var(--green); font-weight:700;">0</span>/8</div>
+    </div>
+    <div class="gex-body" id="ex1-container"></div>
+  </div>
+
+  <!-- EXERCISE 2: BACKSHIFT FILL -->
+  <div class="grammar-ex">
+    <div class="gex-header">
+      <div class="gex-num" style="background:var(--blue);">2</div>
+      <div>
+        <div style="font-weight:700; font-size:15px;">Backshift the tense — complete the reported sentence</div>
+        <div style="font-size:12px; color:var(--muted); margin-top:2px;">Type the correct backshifted form of the verb in brackets.</div>
+      </div>
+    </div>
+    <div class="gex-body" id="ex2-container"></div>
+    <div style="padding:0 22px 18px; display:flex; gap:8px; flex-wrap:wrap;">
+      <button class="check-btn" onclick="checkEx2()">✓ Check</button>
+      <button class="reveal-btn" onclick="toggleReveal('ex2-ans')">Show answers</button>
+    </div>
+    <div class="answer-reveal" id="ex2-ans" style="margin:0 22px 16px;">
+      <strong>1.</strong> liked &nbsp;|&nbsp; <strong>2.</strong> was studying &nbsp;|&nbsp; <strong>3.</strong> had finished &nbsp;|&nbsp;
+      <strong>4.</strong> would call &nbsp;|&nbsp; <strong>5.</strong> could speak &nbsp;|&nbsp; <strong>6.</strong> had been waiting &nbsp;|&nbsp;
+      <strong>7.</strong> had to leave &nbsp;|&nbsp; <strong>8.</strong> had seen
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SPY ACADEMY ═══════════════════ -->
+<section class="section">
+  <div class="section-label">
+    <span class="tag tag-spy">🕵️ Pair Activity</span>
+    <span class="section-title">Spy Academy: Comms</span>
+    <span class="section-time">~25 min</span>
+  </div>
+
+  <div class="card" style="margin-bottom:12px; padding:16px 20px;">
+    <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+      <div style="font-size:32px;">🕵️</div>
+      <div>
+        <p style="font-size:14px; font-weight:600; margin-bottom:4px;">Work with your partner to complete all 4 missions.</p>
+        <p style="font-size:13px; color:var(--muted);">Start with The Briefing Room to review the rules, then unlock each mission in order. Person A does missions 1 & 3, Person B checks. Then switch for missions 2 & 4.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="spy-shell">
+    <div class="spy-topbar">
+      <div class="spy-logo"><div class="spy-logo-icon">📡</div><div class="spy-logo-text">SPY ACADEMY · COMMS DIVISION</div></div>
+      <div class="spy-status"><div class="spy-dot"></div><span>SECURE CONNECTION</span><span class="spy-rank" id="spy-rank-top">RECRUIT</span></div>
+    </div>
+
+    <!-- HUB SCREEN -->
+    <div class="spy-screen active" id="ss-hub">
+      <div class="spy-hub-title">Welcome,<br>Agent.</div>
+      <div class="spy-hub-sub">// MISSION BRIEFING — SELECT MODULE //</div>
+      <div class="spy-mission-grid">
+        <div class="spy-mission-card" id="smc-0" onclick="openMission(0)">
+          <div class="smc-num"><div class="smc-dot"></div>BRIEFING ROOM</div>
+          <div class="smc-title">📋 Rules & Theory</div>
+          <div class="smc-sub">Learn how to report intel visually. Review all transformations before starting missions.</div>
+          <div class="smc-btn">INITIATE MODULE ▶</div>
+          <div class="smc-complete" id="smc-done-0" style="display:none">✅</div>
+        </div>
+        <div class="spy-mission-card" id="smc-1" onclick="openMission(1)">
+          <div class="smc-num"><div class="smc-dot"></div>MISSION 1</div>
+          <div class="smc-title">🎯 Interceptor</div>
+          <div class="smc-sub">Decrypt 10 direct quotes into reported speech. Type the correct reported form.</div>
+          <div class="smc-btn">INITIATE MODULE ▶</div>
+          <div class="smc-complete" id="smc-done-1" style="display:none">✅</div>
+        </div>
+        <div class="spy-mission-card" id="smc-2" onclick="openMission(2)">
+          <div class="smc-num"><div class="smc-dot"></div>MISSION 2</div>
+          <div class="smc-title">📁 Intel Analysis</div>
+          <div class="smc-sub">Read 4 intercepted files and write official reports in reported speech.</div>
+          <div class="smc-btn">INITIATE MODULE ▶</div>
+          <div class="smc-complete" id="smc-done-2" style="display:none">✅</div>
+        </div>
+        <div class="spy-mission-card" id="smc-3" onclick="openMission(3)">
+          <div class="smc-num"><div class="smc-dot"></div>MISSION 3</div>
+          <div class="smc-title">🔦 Interrogation</div>
+          <div class="smc-sub">Reconstruct a full interrogation dialogue in reported speech. Final mission.</div>
+          <div class="smc-btn">INITIATE MODULE ▶</div>
+          <div class="smc-complete" id="smc-done-3" style="display:none">✅</div>
+        </div>
+      </div>
+      <div class="spy-score-bar">
+        <div class="spy-score-cell"><div class="ssc-val" id="spy-m1-score">—</div><div class="ssc-label">Mission 1</div></div>
+        <div class="spy-score-cell"><div class="ssc-val" id="spy-m2-score">—</div><div class="ssc-label">Mission 2</div></div>
+        <div class="spy-score-cell"><div class="ssc-val" id="spy-m3-score">—</div><div class="ssc-label">Mission 3</div></div>
+        <div class="spy-score-cell"><div class="ssc-val" id="spy-rank-score">RECRUIT</div><div class="ssc-label">Your Rank</div></div>
+      </div>
+    </div>
+
+    <!-- BRIEFING ROOM -->
+    <div class="spy-screen" id="ss-0">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:10px;">
+        <div><div style="font-family:'DM Mono',monospace; font-size:10px; color:var(--spy-green); letter-spacing:2px; margin-bottom:6px;">📋 BRIEFING ROOM</div><div style="font-family:'Fraunces',serif; font-size:28px; color:white; font-weight:700;">Rules &amp; Theory</div></div>
+        <button class="spybtn spybtn-ghost" onclick="backToHub()">← HQ</button>
+      </div>
+      <div class="briefing-box">
+        <div class="briefing-label">// MODULE 1: THE BASIC RULE</div>
+        <div class="briefing-title">Reported speech moves tenses back one step ⏪</div>
+        <div class="briefing-text">
+          You are an agent. You cannot always transmit exact words — you must <strong>report</strong> what was said.<br><br>
+          <span style="color:var(--spy-red);">DIRECT:</span> "I am following the target."<br>
+          <span style="color:var(--spy-green);">REPORTED:</span> She said she <strong>was following</strong> the target.
+        </div>
+      </div>
+      <div class="briefing-box">
+        <div class="briefing-label">// MODULE 2: TENSE BACKSHIFT CHART</div>
+        <div class="briefing-title">The transformation protocol</div>
+        <div style="display:grid; grid-template-columns:1fr 20px 1fr; gap:6px; margin:12px 0;">
+          <div class="sbs-from">present simple</div><div class="sbs-arr">→</div><div class="sbs-to">past simple</div>
+          <div class="sbs-from">present continuous</div><div class="sbs-arr">→</div><div class="sbs-to">past continuous</div>
+          <div class="sbs-from">present perfect</div><div class="sbs-arr">→</div><div class="sbs-to">past perfect</div>
+          <div class="sbs-from">past simple</div><div class="sbs-arr">→</div><div class="sbs-to">past perfect</div>
+          <div class="sbs-from">will</div><div class="sbs-arr">→</div><div class="sbs-to">would</div>
+          <div class="sbs-from">can</div><div class="sbs-arr">→</div><div class="sbs-to">could</div>
+          <div class="sbs-from">must</div><div class="sbs-arr">→</div><div class="sbs-to">had to</div>
+        </div>
+      </div>
+      <div class="briefing-box">
+        <div class="briefing-label">// MODULE 3: SAY vs TELL</div>
+        <div class="briefing-text">
+          <strong>SAY</strong> → does NOT need a person: "She said (that) she was ready."<br>
+          <strong>TELL</strong> → ALWAYS needs a person: "She told the commander she was ready."<br><br>
+          ❌ "She said me…" &nbsp; ✅ "She said to me…" / "She told me…"
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;">
+        <button class="spybtn spybtn-green" onclick="completeMission(0)">✅ BRIEFING COMPLETE — Back to HQ</button>
+      </div>
+    </div>
+
+    <!-- MISSION 1: INTERCEPTOR -->
+    <div class="spy-screen" id="ss-1">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; flex-wrap:wrap; gap:10px;">
+        <div><div style="font-family:'DM Mono',monospace; font-size:10px; color:var(--spy-green); letter-spacing:2px; margin-bottom:6px;">🎯 MISSION 1</div><div style="font-family:'Fraunces',serif; font-size:28px; color:white; font-weight:700;">Interceptor</div></div>
+        <button class="spybtn spybtn-ghost" onclick="backToHub()">← HQ</button>
+      </div>
+      <div style="font-size:13px; color:rgba(0,230,118,0.6); font-family:'DM Mono',monospace; margin-bottom:16px;">Convert each intercepted quote into reported speech. Type the full reported sentence.</div>
+      <div class="int-progress"><div class="int-progress-bar" id="int-prog" style="width:0%"></div></div>
+      <div class="int-score">Quote <span id="int-curr">1</span> of <span id="int-total">10</span> · Score: <span id="int-score">0</span></div>
+      <div class="interceptor-display">
+        <div class="int-file-num" id="int-file-num">INTERCEPTED TRANSMISSION #001</div>
+        <div class="int-quote" id="int-quote">"I am watching the target right now."</div>
+        <div class="int-speaker" id="int-speaker">— AGENT ZERO</div>
+      </div>
+      <div class="int-task" id="int-task">Agent Zero <strong>said that</strong> she/he...</div>
+      <div class="int-input-row">
+        <span class="int-prefix" id="int-prefix">Agent Zero said that</span>
+        <input class="int-input" id="int-input" placeholder="type the reported clause…" onkeydown="if(event.key==='Enter')checkInterceptor()">
+      </div>
+      <div class="spy-feedback" id="int-feedback"></div>
+      <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;">
+        <button class="spybtn spybtn-green" onclick="checkInterceptor()">⟩ TRANSMIT</button>
+        <button class="spybtn spybtn-ghost" onclick="skipInterceptor()">SKIP →</button>
+      </div>
+    </div>
+
+    <!-- MISSION 2: INTEL ANALYSIS -->
+    <div class="spy-screen" id="ss-2">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; flex-wrap:wrap; gap:10px;">
+        <div><div style="font-family:'DM Mono',monospace; font-size:10px; color:var(--spy-green); letter-spacing:2px; margin-bottom:6px;">📁 MISSION 2</div><div style="font-family:'Fraunces',serif; font-size:28px; color:white; font-weight:700;">Intel Analysis</div></div>
+        <button class="spybtn spybtn-ghost" onclick="backToHub()">← HQ</button>
+      </div>
+      <div style="font-size:13px; color:rgba(0,230,118,0.6); font-family:'DM Mono',monospace; margin-bottom:20px;">Read each intercepted file. Write an official report in reported speech below each one. Work in pairs — compare your reports!</div>
+
+      <!-- FILE 1 -->
+      <div class="intel-file">
+        <div class="intel-header"><span class="intel-file-tag">FILE 001-A</span><span class="intel-title">Surveillance Log — Street Corner</span><span class="intel-stamp">CLASSIFIED</span></div>
+        <div class="intel-body">
+          <div class="intel-transcript">
+            <div><span class="it-speaker">SUSPECT:</span> "I meet my contact here every Tuesday."</div>
+            <div><span class="it-speaker">SUSPECT:</span> "She brings me information about the bank."</div>
+            <div><span class="it-speaker">SUSPECT:</span> "I can't tell you her name."</div>
+          </div>
+          <div class="intel-report-area">
+            <div class="ira-label"><span>📋</span> YOUR OFFICIAL REPORT</div>
+            <textarea class="ira-textarea" placeholder="The suspect said that he/she met his/her contact there every Tuesday. He/She added that..."></textarea>
+            <div class="ira-hint">💡 Remember: "I" → he/she · "here" → there · "every Tuesday" stays · "can't" → couldn't</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FILE 2 -->
+      <div class="intel-file">
+        <div class="intel-header"><span class="intel-file-tag">FILE 002-B</span><span class="intel-title">Radio Intercept — Unknown Agent</span><span class="intel-stamp">TOP SECRET</span></div>
+        <div class="intel-body">
+          <div class="intel-transcript">
+            <div><span class="it-speaker">UNKNOWN:</span> "The mission will start at midnight."</div>
+            <div><span class="it-speaker">UNKNOWN:</span> "I have already sent the package."</div>
+            <div><span class="it-speaker">UNKNOWN:</span> "You must be there on time."</div>
+          </div>
+          <div class="intel-report-area">
+            <div class="ira-label"><span>📋</span> YOUR OFFICIAL REPORT</div>
+            <textarea class="ira-textarea" placeholder="The unknown agent said that the mission would start at midnight. He/She added that..."></textarea>
+            <div class="ira-hint">💡 "will" → would · "have already sent" → had already sent · "must" → had to</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FILE 3 -->
+      <div class="intel-file">
+        <div class="intel-header"><span class="intel-file-tag">FILE 003-C</span><span class="intel-title">Witness Statement — Market Square</span><span class="intel-stamp">RESTRICTED</span></div>
+        <div class="intel-body">
+          <div class="intel-transcript">
+            <div><span class="it-speaker">WITNESS:</span> "I saw two people exchange a bag yesterday."</div>
+            <div><span class="it-speaker">WITNESS:</span> "They were wearing dark coats."</div>
+            <div><span class="it-speaker">WITNESS:</span> "I took a photo on my phone."</div>
+          </div>
+          <div class="intel-report-area">
+            <div class="ira-label"><span>📋</span> YOUR OFFICIAL REPORT</div>
+            <textarea class="ira-textarea" placeholder="The witness said that he/she had seen two people exchange a bag the day before..."></textarea>
+            <div class="ira-hint">💡 "saw" → had seen · "were wearing" → had been wearing · "yesterday" → the day before</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FILE 4 -->
+      <div class="intel-file">
+        <div class="intel-header"><span class="intel-file-tag">FILE 004-D</span><span class="intel-title">Undercover Report — Safe House</span><span class="intel-stamp">URGENT</span></div>
+        <div class="intel-body">
+          <div class="intel-transcript">
+            <div><span class="it-speaker">AGENT K:</span> "We are moving the target to a new location tonight."</div>
+            <div><span class="it-speaker">AGENT K:</span> "I don't know if it's safe here."</div>
+            <div><span class="it-speaker">AGENT K:</span> "We can contact you from the new safe house tomorrow."</div>
+          </div>
+          <div class="intel-report-area">
+            <div class="ira-label"><span>📋</span> YOUR OFFICIAL REPORT</div>
+            <textarea class="ira-textarea" placeholder="Agent K reported that they were moving the target to a new location that night..."></textarea>
+            <div class="ira-hint">💡 "are moving" → were moving · "tonight" → that night · "here" → there · "can" → could · "tomorrow" → the next day</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; margin-top:8px; flex-wrap:wrap;">
+        <button class="spybtn spybtn-green" onclick="completeMission(2)">✅ REPORTS SUBMITTED — Back to HQ</button>
+      </div>
+    </div>
+
+    <!-- MISSION 3: INTERROGATION -->
+    <div class="spy-screen" id="ss-3">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; flex-wrap:wrap; gap:10px;">
+        <div><div style="font-family:'DM Mono',monospace; font-size:10px; color:var(--spy-red); letter-spacing:2px; margin-bottom:6px;">🔦 MISSION 3 — FINAL</div><div style="font-family:'Fraunces',serif; font-size:28px; color:white; font-weight:700;">Interrogation</div></div>
+        <button class="spybtn spybtn-ghost" onclick="backToHub()">← HQ</button>
+      </div>
+      <div class="interrogation-box">
+        <div class="int-room-label"><span>🔴</span> LIVE — INTERROGATION ROOM 3</div>
+        <div class="dialogue-line"><span class="dl-speaker dl-agent">AGENT:</span><div class="dl-text">"Where were you last night?"</div></div>
+        <div class="dialogue-line"><span class="dl-speaker dl-suspect">SUSPECT:</span><div class="dl-text">"I was at home. I didn't go anywhere."</div></div>
+        <div class="dialogue-line"><span class="dl-speaker dl-agent">AGENT:</span><div class="dl-text">"We have a witness who saw you near the harbour."</div></div>
+        <div class="dialogue-line"><span class="dl-speaker dl-suspect">SUSPECT:</span><div class="dl-text">"I sometimes walk near the harbour. It isn't a crime."</div></div>
+        <div class="dialogue-line"><span class="dl-speaker dl-agent">AGENT:</span><div class="dl-text">"Can you explain this photo? It was taken yesterday."</div></div>
+        <div class="dialogue-line"><span class="dl-speaker dl-suspect">SUSPECT:</span><div class="dl-text">"I have never seen that photo before. I want to call my lawyer."</div></div>
+      </div>
+
+      <div class="int3-task">
+        <h4>📋 Your Mission: Write the Official Report</h4>
+        <p>Complete each reported sentence below. You are writing the official report of what was said during the interrogation. Choose the correct form for each gap.</p>
+      </div>
+
+      <div id="m3-container"></div>
+
+      <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;">
+        <button class="spybtn spybtn-green" onclick="checkM3()">🔍 SUBMIT REPORT</button>
+        <button class="spybtn spybtn-ghost" onclick="toggleReveal('m3-ans')">SHOW ANSWERS</button>
+        <button class="spybtn spybtn-red" onclick="backToHub()">← HQ</button>
+      </div>
+      <div class="answer-reveal" id="m3-ans" style="background:rgba(0,230,118,0.06); border-color:rgba(0,230,118,0.2); color:#86efac; margin-top:12px;">
+        <strong>1.</strong> had been / hadn't gone anywhere &nbsp;|&nbsp;
+        <strong>2.</strong> had seen / near the harbour &nbsp;|&nbsp;
+        <strong>3.</strong> sometimes walked / wasn't &nbsp;|&nbsp;
+        <strong>4.</strong> could explain / had been taken / the day before &nbsp;|&nbsp;
+        <strong>5.</strong> had never seen / wanted
+      </div>
+      <div class="spy-graduation" id="spy-graduation">
+        <div class="sg-icon">🏆</div>
+        <div class="sg-title">Mission Complete, Agent.</div>
+        <div class="sg-rank" id="sg-rank-text">SPY ACADEMY GRADUATE</div>
+        <div class="sg-score" id="sg-score-display">—</div>
+        <div class="sg-score-label">missions completed</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.5); margin-top:12px; line-height:1.6;" id="sg-msg">You have successfully mastered reported speech. Welcome to the Comms Division.</div>
+      </div>
+    </div>
+
+  </div><!-- end spy-shell -->
+</section>
+
+</main>
+
+<script>
+// ══ COLLAPSIBLES ══
+function toggleBlock(h){h.nextElementSibling.classList.toggle('open');h.querySelector('.toggle-icon').classList.toggle('open-icon')}
+function toggleReveal(id){const el=document.getElementById(id);el.style.display=el.style.display==='block'?'none':'block'}
+function two_col(){} // placeholder
+
+// ══ GRAMMAR EX 1: SAY OR TELL ══
+const ex1Data=[
+  {s:"___ me what happened!",v:"tell",context:"You need an object after this verb."},
+  {s:"She ___ that she was tired.",v:"say",context:"No person mentioned after the verb."},
+  {s:"He ___ us the news as soon as he arrived.",v:"told",context:"'Us' is the indirect object — this verb needs one."},
+  {s:"They ___ the teacher they hadn't done the homework.",v:"told",context:"'The teacher' is the indirect object."},
+  {s:"I ___ him that I would come back.",v:"told",context:"'Him' is the indirect object."},
+  {s:"She ___ she was going to be late.",v:"said",context:"No person mentioned — just the reported clause."},
+  {s:"He ___ to me that the meeting was cancelled.",v:"said",context:"When a person follows, use 'to' with this verb."},
+  {s:"Please ___ your name and number.",v:"say",context:"'Your name' is not a person — it's information. Use this verb."},
+];
+let ex1Score=0;
+function buildEx1(){
+  const c=document.getElementById('ex1-container');
+  ex1Data.forEach((item,i)=>{
+    const d=document.createElement('div');d.className='st-item';d.id=`ex1-${i}`;
+    d.innerHTML=`<div class="st-item-num">${i+1}</div><div style="flex:1; font-size:14px;">${i+1}. "${item.s}"</div><div class="st-btns"><button class="stb stb-say" onclick="pickST(${i},'say',this)">SAY</button><button class="stb stb-tell" onclick="pickST(${i},'tell',this)">TELL</button></div>`;
+    c.appendChild(d);
+  });
+}
+function pickST(idx,val,btn){
+  const row=document.getElementById(`ex1-${idx}`);
+  if(row.dataset.done)return;
+  const correct=val.toLowerCase()===ex1Data[idx].v;
+  btn.classList.add('selected');
+  btn.classList.add(correct?'correct':'wrong');
+  row.querySelectorAll('.stb').forEach(b=>{b.disabled=true;if(!correct&&b!==btn){const other=ex1Data[idx].v;if((other==='say'&&b.classList.contains('stb-say'))||(other==='tell'&&b.classList.contains('stb-tell')))b.classList.add('correct');}});
+  if(correct){ex1Score++;document.getElementById('ex1-score').textContent=ex1Score;}
+  const note=document.createElement('div');note.style.cssText='font-size:12px;color:var(--muted);padding:4px 0 0 8px;font-style:italic;';note.textContent=(correct?'✅ ':'❌ ')+ex1Data[idx].context;row.appendChild(note);
+  row.dataset.done='1';
+}
+buildEx1();
+
+// ══ GRAMMAR EX 2: BACKSHIFT ══
+const ex2Data=[
+  {text:"\"I really like this city,\" she said. → She said she really ___ (like) the city.",id:"e2-1",ans:["liked"]},
+  {text:"\"I am studying for the exam,\" he told me. → He told me he ___ (study) for the exam.",id:"e2-2",ans:["was studying"]},
+  {text:"\"We have finished the report,\" they said. → They said they ___ (finish) the report.",id:"e2-3",ans:["had finished"]},
+  {text:"\"I will call you tonight,\" she said. → She said she ___ (call) me that night.",id:"e2-4",ans:["would call"]},
+  {text:"\"He can speak four languages,\" she told me. → She told me he ___ (speak) four languages.",id:"e2-5",ans:["could speak"]},
+  {text:"\"I have been waiting for an hour,\" he said. → He said he ___ (wait) for an hour.",id:"e2-6",ans:["had been waiting"]},
+  {text:"\"You must leave immediately,\" she told us. → She told us we ___ (leave) immediately.",id:"e2-7",ans:["had to leave"]},
+  {text:"\"I saw that film last week,\" he said. → He said he ___ (see) that film the week before.",id:"e2-8",ans:["had seen"]},
+];
+function buildEx2(){
+  const c=document.getElementById('ex2-container');
+  ex2Data.forEach((item,i)=>{
+    const d=document.createElement('div');d.style.cssText='padding:10px 0;border-bottom:1px solid #f5f5f5;font-size:14px;line-height:1.9';
+    d.innerHTML=`<span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:var(--blue);color:white;border-radius:50%;font-size:11px;font-weight:700;margin-right:8px;vertical-align:middle;">${i+1}</span>${item.text.replace('___',`<input class="blank-input" id="${item.id}" placeholder="verb form…" style="min-width:140px;">`)}`
+    c.appendChild(d);
+  });
+}
+buildEx2();
+function checkEx2(){
+  ex2Data.forEach(item=>{
+    const el=document.getElementById(item.id);
+    if(!el||!el.value.trim())return;
+    const v=el.value.trim().toLowerCase();
+    const ok=item.ans.some(a=>a.toLowerCase()===v);
+    el.className='blank-input '+(ok?'correct':'incorrect');
+  });
+}
+
+// ══ SPY ACADEMY ══
+function showSpy(id){document.querySelectorAll('.spy-screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
+function backToHub(){showSpy('ss-hub')}
+const missionsDone=[false,false,false,false];
+function openMission(n){showSpy('ss-'+n);if(n===1&&!missionsDone[1]){intQ=0;intScore=0;renderInterceptor();}}
+function completeMission(n){
+  missionsDone[n]=true;
+  document.getElementById(`smc-done-${n}`).style.display='';
+  updateSpyRank();
+  backToHub();
+}
+const RANKS=['RECRUIT','FIELD AGENT','SENIOR AGENT','SPY MASTER','DIRECTOR'];
+function updateSpyRank(){
+  const done=missionsDone.filter(Boolean).length;
+  const rank=RANKS[Math.min(done,RANKS.length-1)];
+  document.getElementById('spy-rank-top').textContent=rank;
+  document.getElementById('spy-rank-score').textContent=rank;
+}
+
+// ══ MISSION 1: INTERCEPTOR ══
+const INT_DATA=[
+  {q:'"I am watching the target right now."',speaker:'Agent Zero',prefix:'Agent Zero said that',ans:['she was watching the target','he was watching the target','they were watching the target']},
+  {q:'"We live near the harbour."',speaker:'The suspects',prefix:'The suspects said that',ans:['they lived near the harbour']},
+  {q:'"I will send you the files tomorrow."',speaker:'The informant',prefix:'The informant said that',ans:['she would send the files the next day','he would send the files the next day','she would send me the files the next day','he would send me the files the next day']},
+  {q:'"She can identify all the agents."',speaker:'The source',prefix:'The source said that',ans:['she could identify all the agents']},
+  {q:'"I have already decoded the message."',speaker:'Agent K',prefix:'Agent K said that',ans:['she had already decoded the message','he had already decoded the message']},
+  {q:'"They are meeting tonight at the station."',speaker:'The contact',prefix:'The contact said that',ans:['they were meeting that night at the station','they were meeting at the station that night']},
+  {q:'"I saw the exchange happen yesterday."',speaker:'The witness',prefix:'The witness said that',ans:['she had seen the exchange happen the day before','he had seen the exchange happen the day before','she had seen the exchange the day before','he had seen the exchange the day before']},
+  {q:'"We must leave before they find us."',speaker:'Agent X',prefix:'Agent X said that',ans:['they had to leave before they found them','they had to leave before they were found']},
+  {q:'"I don\'t know anything about this operation."',speaker:'The suspect',prefix:'The suspect said that',ans:["she didn't know anything about that operation","he didn't know anything about that operation","she didn't know anything about the operation","he didn't know anything about the operation"]},
+  {q:'"The package was delivered here this morning."',speaker:'The courier',prefix:'The courier said that',ans:['the package had been delivered there that morning']},
+];
+let intQ=0,intScore=0;
+function renderInterceptor(){
+  if(intQ>=INT_DATA.length){showIntSummary();return;}
+  const q=INT_DATA[intQ];
+  document.getElementById('int-file-num').textContent=`INTERCEPTED TRANSMISSION #${String(intQ+1).padStart(3,'0')}`;
+  document.getElementById('int-quote').textContent=q.q;
+  document.getElementById('int-speaker').textContent=`— ${q.speaker}`;
+  document.getElementById('int-prefix').textContent=q.prefix;
+  document.getElementById('int-input').value='';
+  document.getElementById('int-input').className='int-input';
+  document.getElementById('int-feedback').className='spy-feedback';
+  document.getElementById('int-curr').textContent=intQ+1;
+  document.getElementById('int-total').textContent=INT_DATA.length;
+  document.getElementById('int-score').textContent=intScore;
+  document.getElementById('int-prog').style.width=(intQ/INT_DATA.length*100)+'%';
+  document.getElementById('int-input').focus();
+}
+let intWait=false;
+function checkInterceptor(){
+  if(intWait)return;
+  const val=document.getElementById('int-input').value.trim().toLowerCase();
+  if(!val)return;
+  const q=INT_DATA[intQ];
+  const ok=q.ans.some(a=>val.replace(/[.,!?]/g,'')===a.toLowerCase().replace(/[.,!?]/g,''));
+  const fb=document.getElementById('int-feedback');
+  if(ok){
+    document.getElementById('int-input').className='int-input int-correct';
+    fb.className='spy-feedback show sf-ok';fb.textContent='✅ TRANSMISSION VERIFIED — '+q.prefix+' '+q.ans[0];
+    intScore++;
+  }else{
+    document.getElementById('int-input').className='int-input int-wrong';
+    fb.className='spy-feedback show sf-bad';fb.textContent='❌ DECRYPTION ERROR — Correct: '+q.prefix+' '+q.ans[0];
+  }
+  intWait=true;setTimeout(()=>{intWait=false;intQ++;renderInterceptor();},2000);
+}
+function skipInterceptor(){if(intWait)return;intQ++;renderInterceptor();}
+function showIntSummary(){
+  document.getElementById('spy-m1-score').textContent=`${intScore}/10`;
+  missionsDone[1]=true;document.getElementById('smc-done-1').style.display='';
+  updateSpyRank();
+  const fb=document.getElementById('int-feedback');
+  fb.className='spy-feedback show sf-ok';
+  fb.textContent=`🏆 MISSION 1 COMPLETE — Score: ${intScore}/10 — Returning to HQ…`;
+  setTimeout(backToHub,2500);
+}
+
+// ══ MISSION 3: INTERROGATION ══
+const M3_DATA=[
+  {label:'1. Report the first suspect answer:',quote:'"I was at home. I didn\'t go anywhere."',hint:'The suspect said that he/she ___  (be) at home and hadn\'t gone anywhere.',inputs:[{id:'m3-1a',ans:['had been','was'],placeholder:"___  (be)"},{id:'m3-1b',ans:["hadn't gone anywhere","didn't go anywhere"],placeholder:"and ___"}]},
+  {label:'2. Report the agent\'s statement about the witness:',quote:'"We have a witness who saw you near the harbour."',hint:'The agent told the suspect that they ___ a witness who ___ him/her near the harbour.',inputs:[{id:'m3-2a',ans:['had','had had'],placeholder:"___ (have)"},{id:'m3-2b',ans:['had seen'],placeholder:"who ___ (see)"}]},
+  {label:'3. Report the suspect\'s second answer:',quote:'"I sometimes walk near the harbour. It isn\'t a crime."',hint:"The suspect said that he/she ___ near the harbour and that it ___ a crime.",inputs:[{id:'m3-3a',ans:['sometimes walked'],placeholder:"___ (walk)"},{id:'m3-3b',ans:["wasn't","was not"],placeholder:"it ___"}]},
+  {label:'4. Report what the agent said about the photo:',quote:'"Can you explain this photo? It was taken yesterday."',hint:"The agent asked if the suspect ___ the photo and told them it ___ the day before.",inputs:[{id:'m3-4a',ans:['could explain'],placeholder:"___ (can explain)"},{id:'m3-4b',ans:['had been taken'],placeholder:"___ (be taken)"}]},
+  {label:'5. Report the suspect\'s final statement:',quote:'"I have never seen that photo before. I want to call my lawyer."',hint:"The suspect said that he/she ___ that photo before and that he/she ___ to call a lawyer.",inputs:[{id:'m3-5a',ans:['had never seen'],placeholder:"___ (never see)"},{id:'m3-5b',ans:['wanted'],placeholder:"___ (want)"}]},
+];
+function buildM3(){
+  const c=document.getElementById('m3-container');
+  M3_DATA.forEach(item=>{
+    const d=document.createElement('div');d.className='int3-item';
+    const inputs=item.inputs.map(inp=>`<input class="int3-input" id="${inp.id}" placeholder="${inp.placeholder}" style="display:inline-block; min-width:160px; margin:0 4px;">`).join(' ');
+    d.innerHTML=`<div style="font-size:11px; font-weight:700; letter-spacing:1px; color:rgba(0,230,118,0.5); text-transform:uppercase; font-family:'DM Mono',monospace; margin-bottom:6px;">${item.label}</div><div class="int3-quote">${item.quote}</div><div style="font-size:13.5px; color:rgba(255,255,255,0.75); line-height:2; margin-top:6px;">${item.hint.replace(item.inputs.map(i=>i.placeholder).join('|'),inputs)}</div>`;
+    // Simple approach: show hint with blanks
+    const hintDiv=d.querySelector('div:last-child');
+    let html=item.hint;
+    item.inputs.forEach(inp=>{html=html.replace(inp.placeholder,`<input class="int3-input" id="${inp.id}" placeholder="${inp.placeholder}" style="min-width:150px; margin:0 4px;">`)});
+    hintDiv.innerHTML=html;
+    c.appendChild(d);
+  });
+}
+buildM3();
+function checkM3(){
+  let score=0,total=0;
+  M3_DATA.forEach(item=>{
+    item.inputs.forEach(inp=>{
+      total++;
+      const el=document.getElementById(inp.id);
+      if(!el||!el.value.trim())return;
+      const v=el.value.trim().toLowerCase().replace(/[.,!?]/g,'');
+      const ok=inp.ans.some(a=>v===a.toLowerCase().replace(/[.,!?]/g,''));
+      el.className='int3-input '+(ok?'correct':'wrong');
+      if(ok)score++;
+    });
+  });
+  document.getElementById('spy-m3-score').textContent=`${score}/${total}`;
+  completeMission(3);
+  // Show graduation
+  const done=missionsDone.filter(Boolean).length;
+  const ranks=['RECRUIT','FIELD AGENT','SENIOR AGENT','SPY MASTER','DIRECTOR'];
+  const rank=ranks[Math.min(done,ranks.length-1)];
+  document.getElementById('sg-rank-text').textContent=rank;
+  document.getElementById('sg-score-display').textContent=`${done}/4`;
+  const msgs=[,'Keep practising — missions 1 & 3 are great for grammar accuracy.','Good progress — two missions down, two to go!','Well done — almost graduated!','All missions complete. You are now a fully qualified Comms Agent!'];
+  document.getElementById('sg-msg').textContent=msgs[done]||msgs[4];
+  document.getElementById('spy-graduation').classList.add('show');
+}
+</script>
+</body>
+</html>
